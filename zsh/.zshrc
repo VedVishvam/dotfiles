@@ -1,10 +1,19 @@
 # Set up the prompt
-eval "$(starship init zsh)"
+
+# This is done to fix max nested function level reached when using vim mode in zsh
+# Check that the function `starship_zle-keymap-select()` is defined.
+# xref: https://github.com/starship/starship/issues/3418
+type starship_zle-keymap-select >/dev/null || \
+  {
+    echo "Load starship"
+    eval "$(/usr/local/bin/starship init zsh)"
+  }
+
 
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
+bindkey -v
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
