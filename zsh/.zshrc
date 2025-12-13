@@ -41,3 +41,7 @@ alias lt="tree -L 2"
 
 # Export Alacritty
 export PATH="$PATH:/home/thevkvishvam/.cargo/bin"
+
+# Plugins
+source $HOME/plugins/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/thevkvishvam/plugins/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
